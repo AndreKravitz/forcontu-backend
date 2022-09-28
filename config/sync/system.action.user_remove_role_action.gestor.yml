@@ -1,0 +1,14 @@
+uuid: 6d6b40c5-e95b-406e-ab56-3896272c6af2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.gestor
+  module:
+    - user
+id: user_remove_role_action.gestor
+label: 'Remove the Gestor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: gestor

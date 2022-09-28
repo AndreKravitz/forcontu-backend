@@ -1,0 +1,32 @@
+uuid: ea0964ec-b47c-47ff-a292-f3d9e65f5c13
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+    - user
+  theme:
+    - bartik
+id: masquerade
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+      gestor: gestor

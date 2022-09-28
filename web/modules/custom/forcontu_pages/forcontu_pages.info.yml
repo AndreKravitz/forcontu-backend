@@ -1,0 +1,5 @@
+name: Forcontu pages
+type: module
+description: 'Displays a basic page.'
+package: Forcontu
+core_version_requirement: ^9

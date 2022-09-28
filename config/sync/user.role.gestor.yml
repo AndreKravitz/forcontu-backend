@@ -1,0 +1,24 @@
+uuid: 3415638f-903f-4e9f-a21e-1ba7c6ad02dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+    - user.role.authenticated
+    - user.role.content_editor
+    - user.role.gestor
+  module:
+    - forcontu_pages
+    - masquerade
+id: gestor
+label: Gestor
+weight: 4
+is_admin: null
+permissions:
+  - 'access tab2 page'
+  - 'masquerade as administrator'
+  - 'masquerade as any user'
+  - 'masquerade as authenticated'
+  - 'masquerade as content_editor'
+  - 'masquerade as gestor'
+  - 'masquerade as super user'

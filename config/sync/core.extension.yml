@@ -24,10 +24,12 @@ module:
   file: 0
   filter: 0
   forcontu_hello: 0
+  forcontu_pages: 0
   help: 0
   history: 0
   image: 0
   link: 0
+  masquerade: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
