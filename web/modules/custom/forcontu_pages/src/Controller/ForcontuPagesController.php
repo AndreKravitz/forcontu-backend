@@ -127,7 +127,8 @@ class ForcontuPagesController extends ControllerBase
     }
 
     public function action1() {
-        return ['#markup' => '<p>' . $this->t('this is the content of Tab 3') . '</p>',];
+        return ['#markup' => '<p>' . $this->t('this is the content of action 1') . '</p>',];
     }
 }
+
 

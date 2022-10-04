@@ -16,8 +16,8 @@ forcontu_pages.tab3:
   base_route: forcontu_pages.tab1
   weight: 30
 
-forcontu_pages.extratab:
-  route_name: forcontu_pages.extratab
-  title: Extra tab
-  base_route: system.admin_content
-  weight: 10
+# forcontu_pages.extratab:
+#   route_name: forcontu_pages.extratab
+#   title: Extra tab
+#   base_route: system.admin_content
+#   weight: 10
