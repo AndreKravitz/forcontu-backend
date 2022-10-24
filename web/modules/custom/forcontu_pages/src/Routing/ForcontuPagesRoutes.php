@@ -19,14 +19,7 @@ class ForcontuPagesRoutes {
         $routes = [];
         $node_types = \Drupal::entityTypeManager()->getStorage('node_type')->loadMultiple();
         foreach ($node_types as $type) {
-        $routes["forcontu_pages.{$type->id()}.help"] = new Route('/forcontu/pages/node/' . $type->id() . '/help',
-        [
-        '_controller' =>'\Drupal\forcontu_pages\Controller\ForcontuPagesController::contentTypeHelpPage','_title' => 'Content Type ' . $type->label(),
-        ],
-        [
-        '_permission' => 'access content',
-        ]
-        );
+            $routes["forcontu_pages.{$type->id()}.help"] = new Route('/forcontu/pages/node/' . $type->id() . '/help', ['_controller' =>'\Drupal\forcontu_pages\Controller\ForcontuPagesController::contentTypeHelpPage','_title' => 'Content Type ' . $type->label(),], ['_permission' => 'access content',]);
         }
     return $routes;
     }

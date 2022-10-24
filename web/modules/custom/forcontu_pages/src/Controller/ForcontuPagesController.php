@@ -12,9 +12,27 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Drupal\user\UserInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 class ForcontuPagesController extends ControllerBase
 {
+    protected $currentUser;
+    protected $dateFormatter;
+    protected $routeMatch;
+
+    public function __construct(AccountInterface $currentuser, DateFormatter $dateFormatter, RouteMatchInterface $routeMatch) {
+        $this->currentUser = $currentuser;
+        $this->dateFormatter = $dateFormatter;
+        $this->routeMatch = $routeMatch;
+    }
+    public static function create(ContainerInterface $container) {
+        return new static(
+            $container->get('current_user'),
+            $container->get('date.formatter'),
+            $container->get('current_route_match')
+        );
+    }
+    
     public function simple()
     {
         return [
@@ -129,6 +147,10 @@ class ForcontuPagesController extends ControllerBase
     public function action1() {
         return ['#markup' => '<p>' . $this->t('this is the content of action 1') . '</p>',];
     }
+
+
+
+    public function contentTypeHelpPage() {
+        return ['#markup' => '<p>' . $this->t('Content for route %route.', ['%route' => $this->routeMatch->getRouteName()]) . '</p>', ];
+    }
 }
-
-
